@@ -1,0 +1,9 @@
+𝜆xy.xz =
+𝜆mn.mz
+
+𝜆xy.xxy =
+𝜆x(𝜆y.xxy) =
+𝜆a(𝜆b.aab)
+
+𝜆xyz.zx =
+𝜆tos.st

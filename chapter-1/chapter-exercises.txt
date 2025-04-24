@@ -1,0 +1,63 @@
+# COMBINATORS
+
+λx.xxx - is a combinator
+λxy.zx - is not a combinator, because z is free variable
+λxyz.xy(zx) - is a combinator
+λxyz.xy(zxy) - is a combinator
+λxy.xy(zxy) - is not a combinator, because z is free variable
+
+# NORMAL FORM OR DIVERGE?
+
+λx.xxx - is in normal form. does not diverge
+
+λz.zz(λy.yy) =
+(λy.yy)(λy.yy) =
+(λy.yy)(λy.yy)
+- so λz.zz(λy.yy) is not in normal form, and does diverge
+
+λx.xxx(z) =
+zzz
+- so λx.xxx(z) is not in normal form, and does not diverge
+
+# BETA REDUCE
+
+(λabc.cba)zz(λwv.w) =
+(λbc.cbz)z(λwv.w) =
+(λc.czz)(λwv.w) =
+(λwv.w)zz =
+(λv.z)z =
+z
+
+
+(λx.λy.xyy)(λa.a)b =
+(λy.(λa.a)yy)b =
+(λa.a)bb =
+bb
+
+(λy.y)(λx.xx)(λz.zq) =
+(λx.xx)(λz.zq) =
+(λz.zq)(λz.zq) =
+(λz.zq)q =
+qq
+
+(λz.z)(λz.zz)(λz.zy) =
+(λz.zz)(λz.zy) =
+(λz.zy)(λz.zy) =
+(λz.zy)y =
+yy
+
+(λx.λy.xyy)(λy.y)y =
+(λy.(λy.y)yy)y =
+(λy.y)yy =
+yy
+
+(λa.aa)(λb.ba)c =
+(λb.ba)(λb.ba)c =
+(λb.ba)ac =
+aac
+
+(λxyz.xz(yz))(λx.z)(λx.a) =
+(λxyz1.xz1(yz1))(λx.z)(λx.a) =
+(λyz1.(λx.z)z1(yz1))(λx.a) =
+(λz1.(λx.z)z1((λx.a)z1)) =
+λz1.za =
